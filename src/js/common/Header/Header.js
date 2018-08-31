@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 require('./Header.scss');
 
@@ -6,9 +8,10 @@ class Header extends React.Component {
 
     render() {
         return (
-            <header className="header">
-                <h1>Trabajo Práctico Frontend TTADS 2018 - Mundial Rusia 2018</h1>
-            </header>
+            <ul className="navigation">
+                <li><Link to='/groups'>Groups</Link></li>
+                <li><Link to='/'>Matches</Link></li>
+            </ul>
         );
     }
 }
