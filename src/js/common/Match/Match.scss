@@ -1,7 +1,7 @@
 .match {
-    background-color: blue;
+    background-color: deepskyblue;
     color: white;
-    border: solid 2px;
+    margin: 2px;
     padding: 5px;
     display: flex;
     align-items: center;
@@ -12,7 +12,7 @@ a:hover,
 a:active,
 a:visited {
     text-decoration: none;
-    color: white;
+    color: inherit;
 }
 
 .match-date {

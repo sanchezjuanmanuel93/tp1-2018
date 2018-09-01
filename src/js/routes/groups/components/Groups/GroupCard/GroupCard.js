@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
-require('./GroupCard.scss');
+import './GroupCard.scss';
 
 class GroupCard extends React.Component {
     constructor(props) {

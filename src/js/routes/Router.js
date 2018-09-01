@@ -11,7 +11,7 @@ class Router extends React.Component {
     render() {
         return (
             <Switch>
-                <Route exact path='/' component={RoundsContainer} />
+                <Route exact path='/' component={GroupsContainer} />
 
                 <Route exact path='/teams' component={TeamsContainer} />
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-require('./MatchDetails.scss');
+import './MatchDetails.scss';
 
 class MatchDetails extends React.Component {
 

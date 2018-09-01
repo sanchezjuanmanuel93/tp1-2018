@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Match from '../../../common/Match/Match';
 
-require('./Group.scss');
+import './Group.scss';
 
 class Group extends React.Component {
 
@@ -19,9 +19,11 @@ class Group extends React.Component {
 
     render() {
         return (
-            <div className="group">
-                {this.props.group.name}
-                {this.renderMatches()}
+            <div className="group-container">
+                <div className="group">
+                    <h4>{this.props.group.name}</h4>
+                    {this.renderMatches()}
+                </div>
             </div>
         );
     }
