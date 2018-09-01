@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Match from './Match/Match';
+import Match from '../../../../common/Match/Match';
 
 require('./Rounds.scss');
 
