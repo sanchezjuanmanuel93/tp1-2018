@@ -8,8 +8,8 @@ class MatchDetails extends React.Component {
     renderGoalTeam(goals) {
         return goals.map((goal) => {
             return (
-                <div className='goals' key={goal.name.toString()}>
-                    <span><b>{goal.name}</b> {goal.minute}&apos; {goal.offset ? `+${goal.offset}` : ''}  </span>
+                <div className='goals' key={`${goal.name}-${goal.score1}-${goal.score2}`}>
+                    <span><b>{goal.name}</b> {goal.minute}&apos; {goal.offset ? `+ ${goal.offset}` : ''}  </span>
                 </div>
             );
         });
@@ -23,7 +23,6 @@ class MatchDetails extends React.Component {
             team1,
             team2,
         } = this.props.match;
-        console.log(this.props.match);
 
         return (
             <div className="match-details" key={num}>

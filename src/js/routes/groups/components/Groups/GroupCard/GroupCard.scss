@@ -1,0 +1,20 @@
+.group-card {
+    align-content: flex-start;
+    align-items: center;
+    background-color: #3299BB;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    font-size: 26px;
+    height: 250px;
+    justify-content: center;
+    margin: 10px;
+    padding: 5px;
+    width: 300px;
+}
+
+.group h3 {
+    text-align: center;
+}
