@@ -10,7 +10,7 @@ class Header extends React.Component {
         return (
             <ul className="navigation">
                 <li><Link to='/groups'>Groups</Link></li>
-                <li><Link to='/'>Matches</Link></li>
+                <li><Link to='/rounds'>Matches</Link></li>
             </ul>
         );
     }
