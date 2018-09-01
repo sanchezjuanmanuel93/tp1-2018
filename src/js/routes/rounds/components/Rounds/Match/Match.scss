@@ -3,12 +3,24 @@
     color: white;
     border: solid 2px;
     padding: 5px;
+    display: flex;
+    align-items: center;
 }
 
-.match a,
+a,
 a:hover,
 a:active,
 a:visited {
     text-decoration: none;
     color: white;
+}
+
+.match-date {
+    width: 30%;
+}
+
+.match-score {
+    width: 70%;
+    align-items: center;
+    align-content: center;
 }
