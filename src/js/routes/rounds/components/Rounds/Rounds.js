@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Match from '../../../../common/Match/Match';
 
-require('./Rounds.scss');
+import './Rounds.scss';
 
 class Rounds extends React.Component {
 

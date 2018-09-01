@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Match from '../../../common/Match/Match';
 
-require('./Group.scss');
+import './Group.scss';
 
 class Group extends React.Component {
 

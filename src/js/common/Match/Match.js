@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-require('./Match.scss');
+import './Match.scss';
 
 class Match extends React.Component {
 

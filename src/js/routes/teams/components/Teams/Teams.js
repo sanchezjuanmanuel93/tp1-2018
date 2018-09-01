@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 
 import Team from './Team/Team';
 
-
-require('./Teams.scss');
+import './Teams.scss';
 
 class Teams extends React.Component {
 

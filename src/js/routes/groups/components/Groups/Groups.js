@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 
 import GroupCard from './GroupCard/GroupCard';
 
-
-require('./Groups.scss');
+import './Groups.scss';
 
 class Groups extends React.Component {
 
