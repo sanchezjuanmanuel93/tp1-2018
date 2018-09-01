@@ -19,9 +19,11 @@ class Group extends React.Component {
 
     render() {
         return (
-            <div className="group">
-                <span className="group-name">{this.props.group.name}</span>
-                {this.renderMatches()}
+            <div className="group-container">
+                <div className="group">
+                    <h4>{this.props.group.name}</h4>
+                    {this.renderMatches()}
+                </div>
             </div>
         );
     }

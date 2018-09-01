@@ -10,11 +10,11 @@
 }
 
 .matchday {
+    width: 50%;
     background-color: #E6E7E8;
     border-radius: 10px;
     border: solid 1px #9A9898;
     margin: 5px;
-    width: 300px;
 
     .match:last-child {
         border-bottom-left-radius: 10px;

@@ -25,7 +25,7 @@ class GroupsContainer extends React.Component {
 
             matches = matches.concat(roundFilteredMatches);
         });
-
+        console.log(matches);
         return matches;
     }
 

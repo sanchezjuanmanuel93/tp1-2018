@@ -14,17 +14,30 @@ class Match extends React.Component {
             score1,
             score2,
             date,
-            time
+            time,
+            stadium,
+            city,
         } = this.props.match;
 
         return (
-            <div className="match" key={num}>
+            <div className="match-container" key={num}>
                 <Link to={`/match/${num}`}>
-                    <div>{date} {time}</div>
-                    <div>{team1.name} - {team2.name}</div>
-                    <div>{score1} - {score2}</div>
+                    <div className="match">
+                        <div className="match-date">
+                            <div>{date} {time}</div>
+                            <div>{stadium.name}</div>
+                            <div>{city}</div>
+                        </div>
+                        <div className="match-score">
+                            <span>{team1.name}</span>
+                            <img src={`https://api.fifa.com/api/v1/picture/flags-fwc2018-2/${team1.code}`} alt={team1.name} />
+                            <b>{score1} - {score2}</b>
+                            <img src={`https://api.fifa.com/api/v1/picture/flags-fwc2018-2/${team2.code}`} alt={team2.name} />
+                            <span>{team2.name}</span>
+                        </div>
+                    </div>
                 </Link>
-            </div>
+            </div >
         );
     }
 }
