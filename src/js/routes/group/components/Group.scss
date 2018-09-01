@@ -1,15 +1,16 @@
 .group {
-    align-content: space-around;
-    align-items: center;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-around;
-    margin: 0 auto;
+    align-content: space-around;
+    align-items: center;
+    width: 100%;
     text-align: center;
-    width: 300px;
 
     .group-match {
-        width: 100%;
+        width: 50%;
+        border: solid 1px #000;
+        margin: 5px;
     }
 }
