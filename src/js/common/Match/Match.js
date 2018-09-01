@@ -21,7 +21,7 @@ class Match extends React.Component {
             <div className="match" key={num}>
                 <Link to={`/match/${num}`}>
                     <div>{date} {time}</div>
-                    <div>{team1.name} VS {team2.name}</div>
+                    <div>{team1.name} - {team2.name}</div>
                     <div>{score1} - {score2}</div>
                 </Link>
             </div>

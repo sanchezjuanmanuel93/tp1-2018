@@ -20,7 +20,7 @@ class Group extends React.Component {
     render() {
         return (
             <div className="group">
-                {this.props.group.name}
+                <span className="group-name">{this.props.group.name}</span>
                 {this.renderMatches()}
             </div>
         );
