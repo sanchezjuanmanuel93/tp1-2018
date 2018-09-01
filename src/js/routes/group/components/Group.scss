@@ -1,16 +1,4 @@
 .group-container {
-    // display: flex;
-    // flex-direction: column;
-    // flex-wrap: nowrap;
-    // justify-content: space-around;
-    // align-content: space-around;
-    // align-items: center;
-    background-color: #E6E7E8;
-    // border-radius: 10px;
-    // border: solid 1px #9A9898;
-    // margin: 25px auto;
-    // text-align: center;
-    // width: 50%;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -25,8 +13,6 @@
     }
 
     .group {
-        // border: solid 1px #000;
-        // margin: 5px;
         width: 50%;
         background-color: #E6E7E8;
         border-radius: 10px;
