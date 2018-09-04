@@ -4,7 +4,8 @@ import * as types from '../actions/actions';
 const INITIAL_STATE = {
     teams: [],
     groups: [],
-    rounds: []
+    rounds: [],
+    comments: [],
 };
 
 export default function (state = INITIAL_STATE, action) {
@@ -21,6 +22,10 @@ export default function (state = INITIAL_STATE, action) {
 
         case types.SET_ROUNDS:
             newState.rounds = action.data;
+            break;
+
+        case types.SET_NEW_COMMENT:
+            newState.comments.push(action.data);
             break;
     }
 

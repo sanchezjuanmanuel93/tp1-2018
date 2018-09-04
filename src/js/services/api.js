@@ -6,4 +6,5 @@ export default class {
     static getTeams() { return axios.get('/worldcup.teams.json'); }
     static getGroups() { return axios.get('/worldcup.groups.json'); }
     static getRounds() { return axios.get('/worldcup.json'); }
+    static createComment(payload) { return axios.post('https://jsonplaceholder.typicode.com/posts', payload); }
 }

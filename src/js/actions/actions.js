@@ -3,6 +3,7 @@ import api from '../services/api';
 export const SET_TEAMS = 'SET_TEAMS';
 export const SET_GROUPS = 'SET_GROUPS';
 export const SET_ROUNDS = 'SET_ROUNDS';
+export const SET_NEW_COMMENT = 'SET_NEW_COMMENT';
 
 export const setRounds = (data) => {
     return {
@@ -25,11 +26,19 @@ export const setGroups = (data) => {
     };
 };
 
+export const setNewComment = (data) => {
+    return {
+        type: SET_NEW_COMMENT,
+        data
+    };
+};
+
+
 export function getRounds() {
     return (dispatch) => {
         api.getRounds()
             .then((response) => {
-                const { rounds } = response.data; 
+                const { rounds } = response.data;
                 dispatch(setRounds(rounds));
             })
             .catch((error) => {
@@ -62,5 +71,22 @@ export function getGroups() {
                 console.log(error);
             });
     };
+}
 
+export function createComment(text) {
+    return (dispatch) => {
+        const payload = {
+            title: 'foo',
+            body: text ,
+            userId: 1
+        };
+
+        api.createComment(payload)
+            .then((response) => {
+                dispatch(setNewComment(response.data));
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
 }

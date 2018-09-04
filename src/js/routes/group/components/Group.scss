@@ -19,7 +19,7 @@
         border: solid 1px #9A9898;
         margin: 5px;
 
-        &:last-child {
+        .group-match:last-child {
             .match {
                 border-bottom-left-radius: 10px;
                 border-bottom-right-radius: 10px;

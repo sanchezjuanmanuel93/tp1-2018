@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Group from '../components/Group';
+import Comments from '../../../common/Comments/Comments';
 
 import * as actions from '../../../actions/actions';
 
@@ -20,12 +21,13 @@ class GroupsContainer extends React.Component {
         let matches = [];
         const groupName = this.props.match.params.groupName;
 
+        // search group matches inside each round
         this.props.rounds.forEach((round) => {
+            // filter matches by group name
             const roundFilteredMatches = _.filter(round.matches, (match) => { return match.group === groupName; });
 
             matches = matches.concat(roundFilteredMatches);
         });
-        console.log(matches);
         return matches;
     }
 
@@ -34,7 +36,12 @@ class GroupsContainer extends React.Component {
         const group = _.find(this.props.groups, { name: groupName });
         const matches = this.getMatches();
 
-        return <Group group={group} matches={matches} />;
+        return (
+            <div>
+                <Group group={group} matches={matches} />
+                <Comments />
+            </div>
+        );
     }
 }
 
