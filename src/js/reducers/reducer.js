@@ -4,7 +4,9 @@ import * as types from '../actions/actions';
 const INITIAL_STATE = {
     teams: [],
     groups: [],
+    group: {},
     rounds: [],
+    match: {},
     comments: [],
 };
 
@@ -20,8 +22,16 @@ export default function (state = INITIAL_STATE, action) {
             newState.groups = action.data;
             break;
 
+        case types.SET_GROUP:
+            newState.group = action.data;
+            break;
+
         case types.SET_ROUNDS:
             newState.rounds = action.data;
+            break;
+
+        case types.SET_MATCH:
+            newState.match = action.data;
             break;
 
         case types.SET_NEW_COMMENT:

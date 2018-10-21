@@ -16,7 +16,7 @@ class Router extends React.Component {
                 <Route exact path='/teams' component={TeamsContainer} />
 
                 <Route exact path='/groups' component={GroupsContainer} />
-                <Route exact path='/group/:groupName' component={GroupContainer} />
+                <Route exact path='/group/:groupId' component={GroupContainer} />
 
                 <Route exact path='/rounds' component={RoundsContainer} />
                 <Route exact path='/match/:matchId' component={matchDetailsContainer} />

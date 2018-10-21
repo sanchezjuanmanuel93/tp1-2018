@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
-require('./Header.scss');
+import './Header.scss';
 
 class Header extends React.Component {
 
@@ -10,7 +9,7 @@ class Header extends React.Component {
         return (
             <ul className="navigation">
                 <li><Link to='/groups'>Groups</Link></li>
-                <li><Link to='/rounds'>Matches</Link></li>
+                {/*<li><Link to='/rounds'>Matches</Link></li>*/}
             </ul>
         );
     }

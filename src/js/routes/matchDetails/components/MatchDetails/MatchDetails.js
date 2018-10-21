@@ -8,8 +8,8 @@ class MatchDetails extends React.Component {
     renderGoalTeam(goals) {
         return goals.map((goal) => {
             return (
-                <div className='goals' key={`${goal.name}-${goal.score1}-${goal.score2}`}>
-                    <span><b>{goal.name}</b> {goal.minute}&apos; {goal.offset ? `+ ${goal.offset}` : ''}  </span>
+                <div className='goals' key={goal.id}>
+                    <span><b>{goal.player}</b> {goal.time}&apos;</span>
                 </div>
             );
         });

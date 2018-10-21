@@ -1,10 +1,12 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://raw.githubusercontent.com/sanchezjuanmanuel93/tp1-2018/master/api/';
+axios.defaults.baseURL = 'http://localhost:1337';
 
 export default class {
     static getTeams() { return axios.get('/worldcup.teams.json'); }
-    static getGroups() { return axios.get('/worldcup.groups.json'); }
-    static getRounds() { return axios.get('/worldcup.json'); }
+    static getGroups() { return axios.get('/group'); }
+    static getGroup(id) { return axios.get(`/group/${id}`); }
+    static getRounds() { return axios.get('/match'); }
+    static getMatch(id) { return axios.get(`/match/${id}`); }
     static createComment(payload) { return axios.post('https://jsonplaceholder.typicode.com/posts', payload); }
 }

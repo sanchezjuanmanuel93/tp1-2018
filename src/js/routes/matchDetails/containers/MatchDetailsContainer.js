@@ -12,44 +12,17 @@ class MatchDetailsContainer extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            match: null
-        };
-
-        this.props.actions.getRounds();
-    }
-
-    componentDidUpdate() {
-        const {
-            rounds
-        } = this.props.worldCup;
-
-        // if there are rounds inside the store and the match is null
-        if (!_.isEmpty(rounds) && !this.state.match) {
-            const matchId = _.toInteger(this.props.match.params.matchId);
-            let match;
-
-            rounds.forEach((round) => {
-                // try to find the match if it hasnt been found yet in a previous round object
-                if (!match) {
-                    // search inside the round.matches array for num === params.matchID
-                    match = _.find(round.matches, { num: matchId });
-                }
-            });
-
-            // save the match to render it
-            this.setState({match});
-        }
+        this.props.actions.getMatch(this.props.match.params.matchId);
     }
 
     render() {
-        return this.state.match ? <MatchDetails match={this.state.match} /> : null;
+        return _.isEmpty(this.props.worldCupMatch) ? null : <MatchDetails match={this.props.worldCupMatch} />;
     }
 }
 
 const mapStateToProps = (state) => {
     return {
-        worldCup: state.worldCup
+        worldCupMatch: state.worldCup.match
     };
 };
 
@@ -61,8 +34,8 @@ const mapDispatchToProps = (dispatch) => {
 
 MatchDetailsContainer.propTypes = {
     actions: PropTypes.object.isRequired,
-    match: PropTypes.object.isRequired,
-    worldCup: PropTypes.object.isRequired
+    match: PropTypes.object.isRequired, // react-router object
+    worldCupMatch: PropTypes.object.isRequired // db object
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MatchDetailsContainer);

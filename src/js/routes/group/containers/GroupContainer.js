@@ -1,45 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Group from '../components/Group';
-import Comments from '../../../common/Comments/Comments';
+// import Comments from '../../../common/Comments/Comments';
 
 import * as actions from '../../../actions/actions';
 
-class GroupsContainer extends React.Component {
+class GroupContainer extends React.Component {
     constructor(props) {
         super(props);
 
-        this.props.actions.getGroups();
-        this.props.actions.getRounds();
-    }
-
-    getMatches() {
-        let matches = [];
-        const groupName = this.props.match.params.groupName;
-
-        // search group matches inside each round
-        this.props.rounds.forEach((round) => {
-            // filter matches by group name
-            const roundFilteredMatches = _.filter(round.matches, (match) => { return match.group === groupName; });
-
-            matches = matches.concat(roundFilteredMatches);
-        });
-        return matches;
+        this.props.actions.getGroup(this.props.match.params.groupId);
     }
 
     render() {
-        const groupName = this.props.match.params.groupName;
-        const group = _.find(this.props.groups, { name: groupName });
-        const matches = this.getMatches();
-
         return (
             <div>
-                <Group group={group} matches={matches} />
-                <Comments />
+                <Group group={this.props.group} />
+                {/*<Comments />*/}
             </div>
         );
     }
@@ -47,8 +27,7 @@ class GroupsContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        groups: state.worldCup.groups,
-        rounds: state.worldCup.rounds
+        group: state.worldCup.group
     };
 };
 
@@ -58,11 +37,10 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-GroupsContainer.propTypes = {
+GroupContainer.propTypes = {
+    group: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired,
     match: PropTypes.object.isRequired,
-    groups: PropTypes.array.isRequired,
-    rounds: PropTypes.array.isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(GroupsContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(GroupContainer);

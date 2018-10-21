@@ -12,7 +12,7 @@ class GroupCard extends React.Component {
     }
 
     redirectToGroupMatches() {
-        this.props.history.push(`/group/${this.props.group.name}`);
+        this.props.history.push(`/group/${this.props.group.id}`);
     }
 
     render() {
