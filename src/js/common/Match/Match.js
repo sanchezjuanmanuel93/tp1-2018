@@ -8,25 +8,20 @@ class Match extends React.Component {
 
     render() {
         const {
-            city,
             date,
-            num,
+            id,
             score1,
             score2,
-            stadium,
             team1,
             team2,
-            time,
         } = this.props.match;
 
         return (
             <div className="match-container">
-                <Link to={`/match/${num}`}>
+                <Link to={`/match/${id}`}>
                     <div className="match">
                         <div className="match-date">
-                            <div>{date} {time}</div>
-                            <div>{stadium.name}</div>
-                            <div>{city}</div>
+                            <div>{date}</div>
                         </div>
                         <div className="match-score">
                             <span>{team1.name}</span>

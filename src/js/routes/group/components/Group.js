@@ -8,9 +8,9 @@ import './Group.scss';
 class Group extends React.Component {
 
     renderMatches() {
-        return this.props.matches.map((match) => {
+        return this.props.group.matches.map((match) => {
             return (
-                <div className="group-match" key={match.num}>
+                <div className="group-match" key={match.id}>
                     <Match match={match} />
                 </div>
             );
@@ -22,7 +22,7 @@ class Group extends React.Component {
             <div className="group-container">
                 <div className="group">
                     <h4>{this.props.group.name}</h4>
-                    {this.renderMatches()}
+                    {this.props.group.matches && this.renderMatches()}
                 </div>
             </div>
         );
@@ -32,12 +32,10 @@ class Group extends React.Component {
 
 Group.propTypes = {
     group: PropTypes.object,
-    matches: PropTypes.array,
 };
 
 Group.defaultProps = {
     group: {},
-    matches: [],
 };
 
 export default Group;

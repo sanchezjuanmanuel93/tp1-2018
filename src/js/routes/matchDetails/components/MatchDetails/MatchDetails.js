@@ -9,7 +9,7 @@ class MatchDetails extends React.Component {
         return goals.map((goal) => {
             return (
                 <div className='goals' key={goal.id}>
-                    <span><b>{goal.player}</b> {goal.time}&apos;</span>
+                    <span><b>{goal.player.name}</b> {goal.time}&apos;</span>
                 </div>
             );
         });
